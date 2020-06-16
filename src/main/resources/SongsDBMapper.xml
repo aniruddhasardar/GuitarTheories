@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.guitar.theory.dbmapper.SongsWithChordsDBMapper">
+
+	<resultMap id="SongsBeanMap" type="com.guitar.theory.domain.SongsBean">
+		<result property="songChordsDtlId" column="SONG_CHORDS_DTL_ID" />
+		<result property="songName" column="SONG_NAME" />
+		<result property="movieName" column="MOVIE_NAME" />
+		<result property="singerName" column="SINGER_NAME" />
+		<result property="musicBy" column="MUSIC_BY" />
+		<result property="lyricsBy" column="LYRICS_BY" />
+		<result property="genre" column="GENRE" />
+		<result property="albumYear" column="ALBUM_YEAR" />
+		<result property="songChords" column="SONG_CHORDS" />
+		<result property="songScale" column="SONG_SCALE" />
+		<result property="strumPattern" column="STRUM_PATTERN" />
+		<result property="createdDate" column="CREATED_DATE" />
+		<result property="updatedDate" column="UPDATED_DATE" />
+		<result property="deleteFlag" column="DELETE_FLAG" />
+
+	</resultMap>
+
+	<select id="getSongsWithChords" resultMap="SongsBeanMap">
+		SELECT
+		SONG_CHORDS_DTL_ID,
+		SONG_NAME,
+		MOVIE_NAME,
+		SINGER_NAME,
+		MUSIC_BY,
+		LYRICS_BY,
+		GENRE,
+		ALBUM_YEAR,
+		SONG_CHORDS,
+		SONG_SCALE,
+		STRUM_PATTERN,
+		CREATED_DATE,
+		UPDATED_DATE,
+		DELETE_FLAG
+		FROM
+		SONG_CHORDS_DTL
+	</select>
+</mapper>

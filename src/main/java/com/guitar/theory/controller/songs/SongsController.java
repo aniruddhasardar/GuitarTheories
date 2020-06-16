@@ -1,0 +1,32 @@
+package com.guitar.theory.controller.songs;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.guitar.theory.domain.SongsBean;
+import com.guitar.theory.service.songs.SongsWithChordsService;
+
+@RestController
+public class SongsController {
+	@Autowired
+	SongsWithChordsService songsWithChordsService; 
+	
+	@RequestMapping(path = "/songs/chords")
+	public List<SongsBean> getSongsWithChords(@RequestBody(required = false) SongsBean songsBean){
+		List<SongsBean> listOfSongs = songsWithChordsService.getSongsWithChords(songsBean);
+		return listOfSongs;
+	}
+	
+	@RequestMapping(path = "/songs/tabs")
+	public List<SongsBean> getSongsWithTabs(@RequestBody(required = false) SongsBean songsBean){
+		List<SongsBean> listOfSongs = new ArrayList<>();
+		
+		
+		return listOfSongs;
+	}
+}
