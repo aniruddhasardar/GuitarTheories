@@ -9,7 +9,6 @@ import com.guitar.theory.dbmapper.SongsWithChordsDBMapper;
 import com.guitar.theory.domain.SongsBean;
 
 @Repository
-//@MapperScan("com.guitar.theory.dbmapper")
 public class SongsWithChordsDao {
 	@Autowired
 	private SongsWithChordsDBMapper dbMapper;
