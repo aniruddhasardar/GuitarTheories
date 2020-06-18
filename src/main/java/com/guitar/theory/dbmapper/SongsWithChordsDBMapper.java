@@ -11,7 +11,6 @@ import com.guitar.theory.domain.SongsBean;
 @Component
 public interface SongsWithChordsDBMapper {
 
-	//@Select("select * from song_chords_dtl")
 	List<SongsBean> getSongsWithChords(SongsBean songsBean);
 
 }
