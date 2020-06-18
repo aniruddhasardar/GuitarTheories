@@ -16,6 +16,12 @@ public class SongsController {
 	@Autowired
 	SongsWithChordsService songsWithChordsService; 
 	
+	/**
+	 * Returns all the songs if the SongsBean isn't passed
+	 * Else return the song/songs based on the values passed with SongBean
+	 * @param songsBean
+	 * @return
+	 */
 	@RequestMapping(path = "/songs/chords")
 	public List<SongsBean> getSongsWithChords(@RequestBody(required = false) SongsBean songsBean){
 		List<SongsBean> listOfSongs = songsWithChordsService.getSongsWithChords(songsBean);
