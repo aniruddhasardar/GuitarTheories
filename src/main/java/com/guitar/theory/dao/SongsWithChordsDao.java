@@ -12,7 +12,12 @@ import com.guitar.theory.domain.SongsBean;
 public class SongsWithChordsDao {
 	@Autowired
 	private SongsWithChordsDBMapper dbMapper;
-
+	
+	/**
+	 * Calls the mapper function to fetch record from DB
+	 * @param songsBean
+	 * @return
+	 */
 	public List<SongsBean> getSongsWithChords(SongsBean songsBean) {
 		 
 		return dbMapper.getSongsWithChords(songsBean);
