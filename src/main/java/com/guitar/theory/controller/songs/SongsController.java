@@ -17,8 +17,8 @@ public class SongsController {
 	SongsWithChordsService songsWithChordsService; 
 	
 	/**
-	 * Returns all the songs if the SongsBean isn't passed
-	 * Else return the song/songs based on the values passed with SongBean
+	 * Returns all the songs with chords if the SongsBean isn't passed
+	 * Else return the song/songs with chords based on the values passed with SongBean
 	 * @param songsBean
 	 * @return
 	 */
@@ -28,6 +28,12 @@ public class SongsController {
 		return listOfSongs;
 	}
 	
+	/**
+	 * Returns all the songs with tabs if the SongsBean isn't passed
+	 * Else return the song/songs with tabs based on the values passed with SongBean
+	 * @param songsBean
+	 * @return
+	 */
 	@RequestMapping(path = "/songs/tabs")
 	public List<SongsBean> getSongsWithTabs(@RequestBody(required = false) SongsBean songsBean){
 		List<SongsBean> listOfSongs = new ArrayList<>();
